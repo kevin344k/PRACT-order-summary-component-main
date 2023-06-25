@@ -1,0 +1,153 @@
+// ## Colors
+
+// ### Primary
+
+$Pale_blue: hsl(225, 100%, 94%);
+$Bright_blue: hsl(245, 75%, 52%);
+
+// ### Neutral
+
+$Very_pale_blue: hsl(225, 100%, 98%);
+$Desaturated_blue: hsl(224, 23%, 55%);
+$Dark_blue: hsl(223, 47%, 23%);
+
+// ## Typography
+
+$font_size_paragraph: 1.6rem;
+$font_family: "Red Hat Display", sans-serif;
+
+html {
+  font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  background-color: $Pale_blue;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  section {
+    width: 330px;
+    border-radius: 30px;
+
+    margin: auto;
+
+    box-shadow: 0px 0px 60px 1px $Desaturated_blue;
+    .section-card-header {
+      width: 100%;
+      img {
+        width: 330px;
+        border-radius: 30px 30px 0 0;
+      }
+    }
+    .section-card-body {
+      width: 100%;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      border-radius: 0 0 30px 30px;
+      font-family: $font_family;
+      font-size: $font_size_paragraph;
+      h1 {
+        font-size: 2rem;
+        margin-top: 20px;
+        font-weight: 900;
+        color: $Dark_blue;
+      }
+      p {
+        margin-top: 15px;
+        font-size: $font_size_paragraph;
+        color: $Desaturated_blue;
+        font-weight: 400;
+        line-height: 25px;
+        text-align: center;
+        padding: 10px;
+      }
+      .section-price {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        margin: 20px 0;
+        background-color: $Very_pale_blue;
+        padding: 15px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        .ico-music {
+          width: 50px;
+          height: 50px;
+          background-image: url("../images/icon-music.svg");
+          background-position: center;
+          border-radius: 50%;
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+        div {
+          display: flex;
+          flex-direction: column;
+          margin-left: 20px;
+          margin-right: 35px;
+
+          p {
+            font-weight: 900;
+            color: $Dark_blue;
+            margin: 0;
+            padding: 0;
+            font-size: 1.4rem;
+          }
+          span {
+            margin: 0;
+            padding: 0;
+            font-size: 1.4rem;
+            color: $Desaturated_blue;
+          }
+        }
+      }
+      button {
+        width: 100%;
+        padding: 15px;
+        margin: 20px;
+        background-color: $Bright_blue;
+        border: none;
+        border-style: none;
+        border-radius: 15px;
+        color: white;
+        font-weight: 700;
+      }
+      span {
+        @extend p;
+        font-weight: 700;
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+  main {
+    section {
+      width: 500px;
+      .section-card-header {
+        width: 100%;
+        img {
+          width: 100%;
+          border-radius: 30px 30px 0 0;
+        }
+      }
+      .section-card-body {
+        padding: 25px 60px;
+        .section-price {
+          justify-content: space-between;
+          div{
+            margin-left: -60px;
+          }
+        
+        }
+      }
+    }
+  }
+}
